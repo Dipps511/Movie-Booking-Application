@@ -66,7 +66,7 @@ import {
 import Logo from "../../assets/logo.svg";
 import { Link } from "react-router-dom";
 import Modal from "react-modal";
-import TabPanel from "../tabPanel/TabPanel";
+import Panel from "../tabPanel/Panel";
 import "./Header.css";
 
 //Header.JS   common functionality
@@ -104,6 +104,7 @@ const Header = ({ bookShow, bookShowId }) => {
                 <div className="book-show">
                 {login ? (
                     <Link
+                        className="book-show-button"
                         to={"/book-show/" + bookShowId}
                         style={{textDecoration: "none"}}
                     >
@@ -111,12 +112,17 @@ const Header = ({ bookShow, bookShowId }) => {
                             Book Show
                         </Button>
                     </Link>
-                ) : (<Button variant="contained" name="Book Show" color="primary" style={{textDecoration: "none"}} onClick={loginHandler}>
+                ) : (<Button
+                    className="book-show-button"
+
+                    variant="contained" name="Book Show"
+                    color="primary" style={{textDecoration: "none"}}
+                    onClick={loginHandler}>
                     Book Show
                 </Button>)
                 }
-                </div>
-                <div className="button-group">
+                {/*</div>*/}
+                {/*<div className="button-group">*/}
                     {login ? (
                         <Button
                             variant="contained"
@@ -174,7 +180,7 @@ const Header = ({ bookShow, bookShowId }) => {
                     <Tab label="Login" />
                     <Tab label="Register" />
                 </Tabs>
-                <TabPanel value={value} index={0}>
+                <Panel value={value} index={0}>
                     <TextField label="Username" required style={{ margin: "5px 0px" }} />
                     <TextField
                         label="Password"
@@ -191,8 +197,8 @@ const Header = ({ bookShow, bookShowId }) => {
                     >
                         Login
                     </Button>
-                </TabPanel>
-                <TabPanel value={value} index={1}>
+                </Panel>
+                <Panel value={value} index={1}>
                     <TextField
                         label="First Name"
                         required
@@ -224,7 +230,7 @@ const Header = ({ bookShow, bookShowId }) => {
                     >
                         Register
                     </Button>
-                </TabPanel>
+                </Panel>
             </Modal>
         </Fragment>
     );

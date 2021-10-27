@@ -16,14 +16,14 @@ const Controller = () => {
           render={(props) => <Home {...props} baseUrl={baseUrl} />}
             // ReactDOM.render(<Home/>,document.getElementById('root'));
         />
-        {/*<Route*/}
-        {/*  path="/movie/:id"*/}
-        {/*  render={(props) => <Details {...props} baseUrl={baseUrl} />}*/}
-        {/*/>*/}
-        {/*<Route*/}
-        {/*  path="/bookshow/:id"*/}
-        {/*  render={(props) => <BookShow {...props} baseUrl={baseUrl} />}*/}
-        {/*/>*/}
+        <Route
+          path="/movie/:id"
+          render={(props) => <Details {...props} baseUrl={baseUrl} />}
+        />
+        <Route
+          path="/book-show/:id"
+          render={(props) => <BookShow {...props} baseUrl={baseUrl} />}
+        />
         <Route
           path="/confirm/:id"
           render={(props) => <Confirmation {...props} baseUrl={baseUrl} />}

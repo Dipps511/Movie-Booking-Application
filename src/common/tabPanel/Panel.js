@@ -1,7 +1,7 @@
 import React from "react";
-import "./TabPanel.css";
+import "./Panel.css";
 
-function TabPanel(props) {
+function Panel(props) {
     const { children, value, index, ...other } = props;
 
     return (
@@ -21,4 +21,4 @@ function TabPanel(props) {
     );
 }
 
-export default TabPanel;
+export default Panel;

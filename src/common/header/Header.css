@@ -26,6 +26,9 @@
     height: 35px;
     animation: rotation 8s infinite linear;
 }
+.book-show{
+    padding: 1px;
+}
 
 @keyframes rotation {
     from {
